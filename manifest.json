@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "LeetCode C++ Autocomplete",
+  "version": "1.0",
+  "description": "Smart C++ autocomplete for LeetCode using Monaco and Tree-sitter",
+
+  "content_scripts": [
+    {
+      "matches": ["*://leetcode.com/problems/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "tree-sitter.js",
+        "inject.js",
+        "monaco/*",
+        "parser/*",
+        "semantic/*",
+        "completion/*",
+        "utils/*",
+        "ui/*",
+        "tree-sitter.wasm",
+        "tree-sitter-cpp.wasm"
+      ],
+      "matches": ["*://leetcode.com/*"]
+    }
+  ]
+}
